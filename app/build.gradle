@@ -58,4 +58,12 @@ dependencies {
     implementation 'org.jetbrains.anko:anko-support-v4:0.8.2' // In case you need support-v4 bindings
     implementation 'org.jetbrains.anko:anko-appcompat-v7:0.8.2' // For appcompat-v7 bindings
     implementation 'com.alipay.euler:andfix:0.5.0@aar'// 阿里andFix引入
+    //tinker的核心sdk库
+    implementation("com.tencent.tinker:tinker-android-lib:${TINKER_VERSION}") { changing = true }
+
+    annotationProcessor("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
+    //生成application，只会在编译时候使用
+    compileOnly("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
+
+    implementation 'com.android.support:multidex:1.0.1'
 }
